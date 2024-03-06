@@ -1,23 +1,18 @@
-﻿namespace MauiExample;
+﻿using MauiExample.Pages;
+using MauiExample.ViewModels;
+
+namespace MauiExample;
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
-
     public MainPage()
     {
         InitializeComponent();
     }
 
-    private void OnCounterClicked(object sender, EventArgs e)
+    private async void OnMovePageClicked(object sender, EventArgs e)
     {
-        count++;
-
-        if (count == 1)
-            CounterBtn.Text = $"Clicked {count} time";
-        else
-            CounterBtn.Text = $"Clicked {count} times";
-
-        SemanticScreenReader.Announce(CounterBtn.Text);
+        var viewModel = new DragAndDropViewModel(3);
+        await Navigation.PushAsync(new DragAndDropPage(viewModel));
     }
 }

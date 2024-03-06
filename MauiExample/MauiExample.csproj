@@ -70,4 +70,16 @@
       <None Include="F:\Source\blog-examples\MauiExample\.editorconfig" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Update="Pages\DragAndDropPage.xaml.cs">
+        <DependentUpon>DragAndDropPage.xaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <MauiXaml Update="Pages\DragAndDropPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+    </ItemGroup>
+
 </Project>
